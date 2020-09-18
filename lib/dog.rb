@@ -2,14 +2,13 @@
 require 'pry'
 
 class Dog  
- attr_accessor :name
+ attr_accessor :name, :save
 ## this is a class variable 
     @@all = [] 
 
     ## these are class methods that gets called on every dog instance/initialization
     def initialize(name)
         @name = name 
-        @@all << self 
         @save = save 
     end 
 
@@ -31,5 +30,6 @@ class Dog
     end 
 
     def save
+        @@all << self 
     end 
 end 
